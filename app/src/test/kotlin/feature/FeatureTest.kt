@@ -1,7 +1,6 @@
 package feature
 
 import com.fasterxml.jackson.databind.ObjectMapper
-import com.github.javafaker.Faker
 import global.search.pretask.api.kakao.KakaoApi
 import global.search.pretask.api.naver.NaverApi
 import global.search.pretask.persistence.redis.SearchKeywordRedisRepository
@@ -16,7 +15,6 @@ import org.springframework.boot.test.context.TestConfiguration
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Import
 import org.springframework.context.annotation.Primary
-import org.springframework.context.annotation.Profile
 import org.springframework.test.context.ActiveProfiles
 import org.springframework.test.web.servlet.MockMvc
 import org.springframework.transaction.annotation.Transactional
