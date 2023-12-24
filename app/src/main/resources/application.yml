@@ -1,0 +1,30 @@
+server:
+  servlet:
+    context-path: /
+  port: 8080
+  error:
+    include-exception: false
+    include-stacktrace: NEVER
+  shutdown: graceful
+  tomcat:
+    threads:
+      max: 200
+      min-spare: 200
+    max-connections: 8192
+    keep-alive-timeout: 60000
+    connection-timeout: 3000
+
+spring:
+  application:
+    name: search-pretask
+  profiles:
+    active: local
+  output.ansi.enabled: always
+  main:
+    allow-bean-definition-overriding: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: 'health'
