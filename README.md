@@ -28,6 +28,8 @@
 0. 사전 준비
    ```
    root project 기준 app 하위의 ~/src/main/resources/application-local.yml 파일 내용 중 kakao api key, naver api key를 발급받아 입력해주세요.
+   현재 Build된 Jar 파일은 ~/ops/search-project.jar 에 위치하며 위 키발급 없이 이용이 가능합니다.
+   단, 신규 발급받은 key를 적용하고자 한다면 아래 Build & Run 내용을 참고하여 직접 빌드하여 사용해주세요.
    
    docker-compose Settings
    1. $ cd ~/ops
@@ -44,10 +46,17 @@
    - db: ~/pretask;
    - url: http://localhost:8080/h2-ui
    
-   Springboot 실행
-   $ ./gradlew bootRun -DSpring.profile.active=local
+   SpringBoot Jar Build
+   1. $ cd ~/
+   
+   2. $ ./gradlew build -x test
+   
+   Jar 실행
+   1. $ cd ~/ops
+   
+   2. $ java -jar search-project.jar
    or
-   $ ./gradlew build 또는 bootJar
+   $ java -jar app-1.0.0.jar
    ```
   
 ## API Description
